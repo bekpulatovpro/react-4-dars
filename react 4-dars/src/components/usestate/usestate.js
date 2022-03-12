@@ -1,18 +1,12 @@
 import React from "react";
 
-const Useref = React.forwardRef((_, ref) => {
+const UseState = ({ismodalOpen,setIsmodalOpen}) => {
   return (
-    <div className="modal" ref={ref} onClick={(evt)=>{
-      if(evt.target.matches(".modal")){
-        ref.current.classList.remove("modal__open")
-      }
-    }}>
+    <div className={`modal ${ismodalOpen ? 'modal__open' : ''}`} onClick={(evt)=>{if(evt.target.matches(".modal__open")){setIsmodalOpen(false)}}}>
       <div className="modal__inner">
         <div className="bnma">
           <h3>Modal Title</h3>
-          <button onClick={() => ref.current.classList.remove("modal__open")}>
-            &times;
-          </button>
+          <button className="modal__close" onClick={()=>setIsmodalOpen(false)}>&times;</button>
         </div>
         <p>
           orem Ipsum is simply dummy text of the printing and typesetting
@@ -28,5 +22,6 @@ const Useref = React.forwardRef((_, ref) => {
       </div>
     </div>
   );
-});
-export default Useref;
+};
+
+export default UseState;

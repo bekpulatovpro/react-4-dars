@@ -20,3 +20,34 @@ img {
   object-fit: cover;
   vertical-align: middle;
 }
+
+.modal{
+  display:none;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;  
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.5);
+ 
+}
+.modal__open{
+  display: flex;
+}
+.modal__inner{
+  width: 400px;
+  height: 400px;
+ padding: 20px;
+  background-color: #fff;
+  border-radius: 25px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.bnma{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
